@@ -10,7 +10,7 @@ require 'open-uri'
 BASE_URL    = 'http://www.sql-tutorial.ru/ru'.freeze
 CONTENT_URL = "#{BASE_URL}/content.html".freeze
 
-page = Nokogiri::HTML(open(CONTENT_URL))
+page = Nokogiri::HTML(URI.open(CONTENT_URL))
 divs = page.css('ul.chapters li > div')
 
 divs.each do |div|
